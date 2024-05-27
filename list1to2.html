@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy List Items with jQuery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Source List</h3>
+        <ul id="source-list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Target List</h3>
+        <ul id="target-list">
+            <!-- Items will be copied here -->
+        </ul>
+    </div>
+    <button id="copy-button">Copy Items</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#copy-button').on('click', function() {
+                // Select all list items from the source list
+                const items = $('#source-list li').clone();
+                // Append the cloned items to the target list
+                $('#target-list').append(items);
+            });
+        });
+    </script>
+</body>
+</html>
